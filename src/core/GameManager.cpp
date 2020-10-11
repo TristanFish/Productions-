@@ -29,7 +29,7 @@ void GameManager::Init()
 	window = new Window();
 	window->OnCreate("GAME", Globals::SCREEN_WIDTH, Globals::SCREEN_HEIGHT);
 
-	//imguimanager = new ImGUIManager(window);
+	imguimanager = new ImGUIManager(window);
 
 	TextureManager::LoadAllTextures();
 	ModelManager::LoadAllModels();
@@ -50,10 +50,10 @@ void GameManager::Run()
 		currentScene->Update(Timer::GetScaledDeltaTime());
 		HandleEvents();
 
-		//imguimanager->Run();
+		imguimanager->Run();
 
 		currentScene->Render();
-		//ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		SDL_GL_SwapWindow(window->GetWindow());
 		SDL_Delay(Timer::SleepTime(fps));
 	}
