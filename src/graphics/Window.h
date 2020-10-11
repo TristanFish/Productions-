@@ -27,6 +27,7 @@ public:
 	int GetWidth() const;
 	int GetHeight() const;
 	SDL_Window* GetWindow() const;
+	SDL_GLContext GetContext();
 	
 
 	

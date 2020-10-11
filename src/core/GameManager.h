@@ -6,6 +6,7 @@
 #include "sdl/SDL.h"
 #include "scenes/Scene.h"
 #include "scenes/Scene1.h"
+#include "ImGUIManager.h"
 
 
 class GameManager
@@ -14,6 +15,7 @@ class GameManager
 private:
 	Window* window;
 	Scene* currentScene;
+	ImGUIManager* imguimanager;
 	Timer timer;
 	unsigned int fps;
 	bool isRunning;
